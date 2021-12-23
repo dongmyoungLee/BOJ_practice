@@ -13,5 +13,11 @@ solution(input[0], input[1]);
 
 
 function solution(A, B) {    
-    console.log(A)
+    if (A % 4 === 0 && A % 100 !== 0) {
+        console.log(1)
+    } else if (A % 400 === 0) {
+        console.log(1)
+    } else {
+        console.log(0)
+    }
 }
