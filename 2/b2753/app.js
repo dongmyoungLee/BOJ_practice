@@ -13,5 +13,5 @@ solution(input[0], input[1]);
 
 
 function solution(A, B) {    
-    console.log(A)
+    console.log(A, B)
 }
