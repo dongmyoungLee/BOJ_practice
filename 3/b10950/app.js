@@ -4,19 +4,17 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 let input = fs.readFileSync(filePath).toString().split('\n');
 
-const testCaseArray = [];
+let count = input[0];
+let numbers = [];
 
-for (let i = 1; i <= input[0]; i++) {
-    const tempValue = input[i].split(' ').map((item) => +item);
-    testCaseArray.push({ A: tempValue[0], B: tempValue[1] });
-}
-
-solution(input[0], testCaseArray);
-
-function solution(T, testcaseArray) {
-    for (let i = 0; i < T; ++i) {
-        const A = testcaseArray[i].A;
-        const B = testcaseArray[i].B;
-        console.log(A + B);
+for (let i = 1; i < input.length; i++) {
+    if (input[i] !== '') {
+    numbers.push(input[i].split(' '));
     }
+}
+for (let i = 0; i < numbers.length; i++){
+    let num1 = Number(numbers[i][0]);
+    let num2 = Number(numbers[i][1]);
+
+    console.log(num1 + num2);
 }
