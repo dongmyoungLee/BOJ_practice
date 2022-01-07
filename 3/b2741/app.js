@@ -1,3 +1,4 @@
+const { assert } = require('console');
 const fs = require('fs');
 
 const filePath = process.platform === 'linux' ? '/dev/stdin'
@@ -13,7 +14,10 @@ solution(input[0], input[1]);
 
 
 function solution(A, B) {
+    let result = ''
     for(i = 1; i <= A; i++) {
-        console.log(i)
+        result += i + '\n'
+        
     }
+    console.log(result)
 }
