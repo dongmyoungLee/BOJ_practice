@@ -3,28 +3,18 @@ const filePath = process.platform === 'linux' ? '/dev/stdin'
 : './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
 
+let num = input;
+let sum;
+let i = 0;
 
-let realInput = input[0]
-input = input[0]
-let inputPieceNum = ''
-let sum = 0
-let count = 0
-let condition = true
-
-while (condition) {
-    inputPieceNum = input.split('').map(x => Number(x))
-    console.log(inputPieceNum)
-    sum = inputPieceNum[0] + inputPieceNum[1]
-    if (sum > 9) {
-        sum = sum % 10
-    } else {
-        
+while (true) {
+    sum = Math.floor(num / 10) + num % 10
+    num = (num % 10) * 10 + sum % 10
+    i++
+    if (Number(input) === num) {
+        break
     }
-    input = String(inputPieceNum[1]) + String(sum)
-    count++
-    if(input === realInput) {
-        condition = false
-    }
+    
 }
-console.log(count)
 
+console.log(i)
